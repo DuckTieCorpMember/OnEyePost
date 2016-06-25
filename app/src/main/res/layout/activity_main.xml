@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ducktie.oneyepost.MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/mainLayout"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/a1"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33ffffff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="50dp"
+            android:id="@+id/addressEditText"
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:imeOptions="actionSend"
+            android:padding="5dp"
+            android:textColorHint="#80ffffff"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:hint="Пример: Астана Кабанбай батыра 53"
+            />
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:layout_height="50dp"
+            android:background="#f0c73131"
+            android:id="@+id/findLocationButton"
+            android:src="@drawable/placeholder"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEW CODE"
+        android:gravity="center_horizontal"
+        android:textSize="80sp"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/postCodeTextView"
+        android:layout_below="@+id/linearLayout"
+        android:textIsSelectable="true"
+        android:layout_marginTop="57dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OLD CODE"
+        android:gravity="center_horizontal"
+        android:textSize="50sp"
+        android:textIsSelectable="true"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/oldPostCodeTextView"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/postCodeTextView"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="City: city; Address: address; House: 99;"
+        android:textColor="@color/colorAccent"
+        android:padding="5dp"
+        android:gravity="center"
+        android:id="@+id/inputTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:textIsSelectable="true"
+        android:layout_below="@+id/oldPostCodeTextView"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
