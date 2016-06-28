@@ -95,5 +95,11 @@
         android:textIsSelectable="true"
         android:layout_below="@+id/oldPostCodeTextView"
         android:layout_centerHorizontal="true" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="MAP"
+        android:layout_below="@id/inputTextView"
+        android:id="@+id/mapButton"/>
 
 </RelativeLayout>

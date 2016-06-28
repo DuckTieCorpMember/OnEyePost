@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     private LocationManager locationManager;
     private LocationListener locationListener;
 
+    private Button mapButton;
+
     //animations
     Animation animationFadeIn;
     Animation animationFadeOut;
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         inputTextView = (TextView) findViewById(R.id.inputTextView);
         imageView = (ImageView) findViewById(R.id.imageView);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        mapButton = (Button) findViewById(R.id.mapButton);
 
         Typeface thin = Typeface.createFromAsset(getAssets(), "fonts/robotoThin.ttf");
         Typeface light = Typeface.createFromAsset(getAssets(), "fonts/robotoLight.ttf");
@@ -169,7 +172,18 @@ public class MainActivity extends AppCompatActivity {
             configureButton();
         }
 
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onMapButtonClick();
+            }
+        });
 
+    }
+
+    private void onMapButtonClick() {
+        Intent mapActivity = new Intent(this, GoogleMapActivity.class);
+        startActivity(mapActivity);
     }
 
     @Override
@@ -492,7 +506,7 @@ public class MainActivity extends AppCompatActivity {
         String url;
 
 
-        url = "https://geocode-maps.yandex.ru/a1.x/?format=json&geocode=" + loc.getLongitude() + "," + loc.getLatitude();
+        url = "https://geocode-maps.yandex.ru/1.x/?format=json&geocode=" + loc.getLongitude() + "," + loc.getLatitude();
 
         Log.d(TAG, url);
         RequestQueue queue = Volley.newRequestQueue(this);
