@@ -18,6 +18,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +43,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
     Animation animationFadeIn;
     Animation animationFadeOut;
 
+    //map
+    public static FragmentManager fragmentManager;
+
 
     String apiKey = "cf1a6625b1588dd0c754b9f84e677870";
     String sharedSecret = "821a6d2136a53ee0";
@@ -105,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         postCodeTextView.setTypeface(regular);
         oldPostCodeTextView.setTypeface(light);
         inputTextView.setTypeface(regular);
+
 
         //animations
         animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein);
@@ -172,12 +180,15 @@ public class MainActivity extends AppCompatActivity {
             configureButton();
         }
 
-        mapButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onMapButtonClick();
-            }
-        });
+//        mapButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onMapButtonClick();
+//            }
+//        });
+
+        //map
+        fragmentManager = getSupportFragmentManager();
 
     }
 
@@ -632,4 +643,5 @@ public class MainActivity extends AppCompatActivity {
         TextViewFadeOut();
 
     }
+
 }
